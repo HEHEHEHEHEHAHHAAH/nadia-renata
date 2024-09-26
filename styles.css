@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Changed the font to Courier New */
+    overflow: hidden;
+}
+
+.background {
+    background: linear-gradient(135deg, #f9e4f0 0%, #a1c4fd 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: backgroundMove 30s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.clouds {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: 1;
+}
+
+.cloud {
+    width: 80px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50px;
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.8);
+}
+
+.cloud1 { animation: float 6s ease-in-out infinite; left: -60px; }
+.cloud2 { animation: float 5s ease-in-out infinite; left: 40%; top: 20%; }
+.cloud3 { animation: float 7s ease-in-out infinite; left: 60%; top: 15%; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.letter {
+    width: 280px; /* Increased width */
+    height: auto; /* Allow the height to adjust based on the content */
+    background-color: #ffeb3b; /* Background color */
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.5s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Added padding */
+    position: relative;
+    z-index: 3;
+}
+
+.letter-content {
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s;
+    position: relative;
+    z-index: 4;
+    font-family: 'Courier New', Courier, monospace; /* Set the font to Courier New */
+    font-size: 18px; /* Adjusted font size */
+    word-wrap: break-word; /* Prevent text overflow */
+    line-height: 1.5; /* Added line height for better readability */
+}
+
+.letter.unfolded {
+    transform: scale(1.05) rotateY(0deg); /* Fixed mirroring */
+    background-color: #ffeb3b; /* Keeps the background color */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.heart-container {
+    position: absolute;
+    bottom: -10px; /* Move further into the corner */
+    left: -10px;   /* Move further into the corner */
+    z-index: 5;    /* Ensure it's on top of other elements */
+}
+
+.heart {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.heart.bounce {
+    animation: bounce 0.5s;
+}
+
+.star-container {
+    position: absolute;
+    top: -10px;    /* Move further into the corner */
+    right: -10px;  /* Move further into the corner */
+    z-index: 5;    /* Ensure it's on top of other elements */
+}
+
+.star {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.star.twinkle {
+    animation: twinkle 1s infinite;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}

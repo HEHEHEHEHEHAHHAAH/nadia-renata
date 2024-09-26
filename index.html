@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Letter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="clouds">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+            </div>
+            <div class="letter" id="letter" onclick="toggleLetter()">
+                <div class="letter-content" id="letterText">
+                    Click to reveal the letter!
+                </div>
+            </div>
+            <div class="heart-container" onclick="animateHeart(event)">
+                <img src="heart.png" class="heart" alt="Heart">
+            </div>
+            <div class="star-container" onclick="animateStar(event)">
+                <img src="star.png" class="star" alt="Star">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
